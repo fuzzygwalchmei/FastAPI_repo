@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from datetime import datetime
 
 app = FastAPI()
 
@@ -15,3 +16,8 @@ def get(text: str):
     p_prob = nb_classifier.predict_proba(vectored_new)[0]
 
     return {'prediction':str(pred[0]),'probability': f"{max(p_prob)*100:.2f}%"}
+
+@app.get('/time')
+def time():
+    
+    return datetime.now().strftime('%H:%M:%S')
