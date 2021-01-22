@@ -13,11 +13,6 @@ class City(BaseModel):
     timezone: str
 
 
-# @router.get('/')
-# def index():
-#     return {'key': 'value'}
-
-
 @router.get("/cities")
 def get_cities():
     results = []
