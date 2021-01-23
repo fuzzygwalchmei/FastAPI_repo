@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 function Header(props) {
     return (
         <div className="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="http://localhost:3000">Fuzzle Folio</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -21,7 +21,7 @@ function Header(props) {
                                 <a class="nav-link" href="http://localhost:3000">About Me</a>
                             </li> */}
                             <li class={`nav-item  ${props.location.pathname === "/" ? "active" : ""}`}>
-                                <Link class="nav-link" to="/">Home<span class="sr-only">(current)</span></Link>
+                                <Link class="nav-link" to="/">Home</Link>
                             </li>
                             <li class={`nav-item  ${props.location.pathname === "/about" ? "active" : ""}`}>
                                 <Link class="nav-link" to="/about">About</Link>
@@ -32,7 +32,19 @@ function Header(props) {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
+                                    Education
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="http://localhost:3000">Education</a></li>
+                                    <li><a class="dropdown-item" href="http://localhost:3000">Gaming</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="http://localhost:3000">Repositories</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Gaming
                     </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="http://localhost:3000">Education</a></li>
@@ -42,7 +54,7 @@ function Header(props) {
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="http://localhost:3000" tabindex="-1" aria-disabled="true">Disabled</a>
+                                <a class="nav-link disabled" href="http://localhost:3000" tabindex="-1" aria-disabled="true">API</a>
                             </li>
                         </ul>
                         <form class="d-flex">
